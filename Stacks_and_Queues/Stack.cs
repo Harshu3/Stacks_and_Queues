@@ -26,6 +26,40 @@ namespace Stacks_and_Queues
             }
         }
 
+        public int Peek()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return 0;
+            }
+            else
+            {
+                Console.WriteLine("{0} is the topmost element", top.data);
+                return top.data;
+            }
+        }
+
+        public void Pop()
+        {
+            if (top == null)
+                Console.WriteLine("Stack is empty");
+            else
+            {
+                int delData = Peek();
+                top = top.next;
+                Console.WriteLine("{0} is deleted from stack\n", delData);
+            }
+        }
+
+        public void IsEmpty()
+        {
+            if (top == null)
+                Console.WriteLine("Stack is empty");
+            while (top != null)
+                Pop();
+        }
+
         public void Display()
         {
             if (top == null)
@@ -40,7 +74,6 @@ namespace Stacks_and_Queues
                     Console.WriteLine(temp.data + " ");
                     temp = temp.next;
                 }
-                Console.WriteLine("\n");
             }
         }
     }
