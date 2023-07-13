@@ -29,12 +29,26 @@ namespace Stacks_and_Queues
             }
         }
 
+        public void Dequeue()
+        {
+            while (top != null)
+            {
+                Node temp = top.next;
+                Console.WriteLine($"Deleting element: {top.data}");
+                top = top.next;
+                Display();
+            }
+        }
+
         public void Display()
         {
             Node temp = top;
 
             if (top == null)
+            {
                 Console.WriteLine("No elements are present in queue");
+                return;
+            }
             
             Console.WriteLine("\nDisplaying queue elements");
             while (temp != null)
